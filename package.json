@@ -1,10 +1,9 @@
 {
   "name": "backend-pockemon-battlegame",
   "version": "1.0.0",
-  "description": "first create basic folder structure for Backend-Pockemon-BattleGame \\\r Backend-Pockemon-BattleGame\r │\r ├── db\r │ └── dbinit.js\r │\r ├── leaderboardController.js\r │\r ├── routers\r │ └── leaderboardRouter.js\r │\r ├── schemas\r │ └── LeaderBoard.js\r │\r └── server.js",
-  "main": "controllers.js",
+  "main": "servers.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node --watch server.js",
     "start": "node server.js"
   },
   "keywords": [],
