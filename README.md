@@ -21,7 +21,7 @@ Backend-Pockemon-BattleGame
 
 - install npm init -y it will create package.json file
 - install other depenencies which is required for backend development \
-  `npm install cloudinary cors express mongoose  multer multer-storage-cloudinary nodemon colors `
+  `npm install cors express dotenv mongoose colors `
   - "dependencies":
     Lists the external packages (dependencies) required for your project to run.
     Let’s break down the dependencies:
