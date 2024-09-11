@@ -6,7 +6,6 @@ const getAllScores = async (req, res) => {
   console.log("start of getall");
   try {
     const leaderboard = await Leaderboard.find().sort({ score: -1 }).limit(10);
-    console.log("leaderboard : ", leaderboard);
     if (!leaderboard.length) {
       console.log("check length of lb ");
       return res
