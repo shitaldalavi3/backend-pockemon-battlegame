@@ -5,6 +5,9 @@ const {
   createScore,
   updateScore,
   deleteScore,
+  getAllUsers,
+  createOrUpdateUser,
+  deleteUser,
 } = require("../controllers/leaderboardController");
 
 const router = express.Router();
@@ -23,5 +26,8 @@ router.put("/:id", updateScore);
 
 // Route to delete a score by ID
 router.delete("/:id", deleteScore);
+
+api.route("/user").get(getAllUsers).post(createOrUpdateUser);
+api.route("/user/:id").delete(deleteUser);
 
 module.exports = router;
