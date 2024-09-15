@@ -10,12 +10,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^5.0.0",
-    "mongoose": "^8.6.1"
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.6.2"
   },
   "devDependencies": {
     "colors": "^1.4.0"
-  }
+  },
+  "description": "Backend-Pockemon-BattleGame\r │\r ├── db\r │ └── dbinit.js\r │\r ├── leaderboardController.js\r │\r ├── routers\r │ └── leaderboardRouter.js\r │\r ├── schemas\r │ └── LeaderBoard.js\r │\r └── server.js"
 }

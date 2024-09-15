@@ -5,7 +5,9 @@ const getAllScores = async (req, res) => {
   try {
     const leaderboard = await Leaderboard.find().sort({ score: -1 }).limit(10);
     if (!leaderboard.length) {
-      return res.status(200).json({ message: "No scores found in the leaderboard" });
+      return res
+        .status(200)
+        .json({ message: "No scores found in the leaderboard" });
     }
     return res.status(200).json(leaderboard);
   } catch (error) {
@@ -33,23 +35,25 @@ const createScore = async (req, res) => {
     const { username, score, battles, won, lost } = req.body;
 
     if (!username || score == null) {
-      return res.status(400).json({ message: "Username and score are required" });
+      return res
+        .status(400)
+        .json({ message: "Username and score are required" });
     }
 
     // Check if the player exists and update their stats
     let player = await Leaderboard.findOne({ username });
     if (player) {
-      player.score += score;  // Add the new score to the player's existing score
-      player.battles += battles || 0;  // Increment battles, if provided
-      player.won += won || 0;  // Increment won, if provided
-      player.lost += lost || 0;  // Increment lost, if provided
+      player.score += score; // Add the new score to the player's existing score
+      player.battles += battles || 0; // Increment battles, if provided
+      player.won += won || 0; // Increment won, if provided
+      player.lost += lost || 0; // Increment lost, if provided
     } else {
-      player = new Leaderboard({ 
-        username, 
-        score, 
-        battles: battles || 0, 
-        won: won || 0, 
-        lost: lost || 0 
+      player = new Leaderboard({
+        username,
+        score,
+        battles: battles || 0,
+        won: won || 0,
+        lost: lost || 0,
       });
     }
 
@@ -68,12 +72,12 @@ const updateScore = async (req, res) => {
 
     const updatedScore = await Leaderboard.findByIdAndUpdate(
       id,
-      { 
-        username, 
-        score, 
-        battles, 
-        won, 
-        lost 
+      {
+        username,
+        score,
+        battles,
+        won,
+        lost,
       },
       { new: true }
     );
