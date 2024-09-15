@@ -5,9 +5,6 @@ const {
   createScore,
   updateScore,
   deleteScore,
-  getAllUsers,
-  createOrUpdateUser,
-  deleteUser,
 } = require("../controllers/leaderboardController");
 
 const router = express.Router();
