@@ -127,7 +127,7 @@ const createOrUpdateUser = async (req, res) => {
   }
 
   try {
-    //find user and update. If gameResult is "win", than win = 1, else if gameResult is "lost" than lose = 1
+    //find user and update. If gameResult is "win", then win = 1, else if gameResult is "lost" then lose = 1
     //$inc increments a field by a specified value.
     //upsert creates a document with the requirements if it doesnt already exist
     const user = await Leaderboard.findOneAndUpdate(
