@@ -3,7 +3,7 @@ const Leaderboard = require("../schemas/Leaderboard");
 /// Get all leaderboard scores
 const getAllScores = async (req, res) => {
   try {
-    const leaderboard = await Leaderboard.find().sort({ score: -1 }).limit(10);
+    const leaderboard = await Leaderboard.find().sort({ score: -1 }).limit(100);
     if (!leaderboard.length) {
       return res
         .status(200)
