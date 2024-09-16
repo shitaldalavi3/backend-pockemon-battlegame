@@ -28,7 +28,6 @@ const leaderboardSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
-  git,
 });
 
 module.exports = mongoose.model("Leaderboard", leaderboardSchema);
