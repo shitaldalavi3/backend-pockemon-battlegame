@@ -50,10 +50,10 @@ const createScore = async (req, res) => {
     } else {
       player = new Leaderboard({
         username,
-        score,
         battles: battles || 0,
         won: won || 0,
         lost: lost || 0,
+        score,
       });
     }
 
@@ -68,17 +68,11 @@ const createScore = async (req, res) => {
 const updateScore = async (req, res) => {
   try {
     const { id } = req.params;
-    const { username, score, battles, won, lost } = req.body;
+    const { username, battles, won, lost, score } = req.body;
 
     const updatedScore = await Leaderboard.findByIdAndUpdate(
       id,
-      {
-        username,
-        score,
-        battles,
-        won,
-        lost,
-      },
+      { username, battles, won, lost, score },
       { new: true }
     );
 
