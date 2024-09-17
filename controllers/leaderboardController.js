@@ -1,4 +1,4 @@
-const Leaderboard = require("../schemas/Leaderboard");
+const Leaderboard = require("../schemas/LeaderBoard");
 
 /// Get all leaderboard scores
 const getAllScores = async (req, res) => {
