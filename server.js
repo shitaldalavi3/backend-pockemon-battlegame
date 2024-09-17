@@ -7,7 +7,7 @@ const connectDB = require("./db/dbinit");
 connectDB();
 
 const leaderboardRoutes = require("./routes/leaderboardRoutes");
-const protectedRoutes = require("./routes/protectedRoute");
+
 
 const port = process.env.PORT || 8080;
 
@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Routes
 app.use("/leaderboard", leaderboardRoutes);
-app.use("/profile", protectedRoutes);
+
 
 app.get("/", (req, res) => {
   res.send("welcome to the pokemon bettel game ");
