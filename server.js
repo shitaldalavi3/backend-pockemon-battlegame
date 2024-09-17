@@ -23,6 +23,7 @@ app.use("/leaderboard", leaderboardRoutes);
 app.get("/", (req, res) => {
   res.send("welcome to the pokemon bettel game ");
 });
+
 app.listen(port, () =>
   console.log(`Server running on http://localhost:${port}`.bgGreen.black)
 );
